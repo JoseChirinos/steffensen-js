@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Newton Raphson</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="jumbotron">
+				  <h1 class="display-3">Resolución con Newton Raphson</h1>
+				  <p>
+				  	Para Resolver por este método por favor ingrese los datos de forma ordenada</p>
+				  <p>
+				  	<a href="void:;" id="btnDefault" class="btn btn-dark">
+						Usar Datos Preterminados
+						<span class="glyphicon glyphicon-heart"></span>
+					</a>
+				  	<a href="void:;" id="btnReset" class="btn btn-success">
+						Nuevo
+						<span class="glyphicon glyphicon-plus"></span>
+					</a>
+				</div>		
+			</div>
+		</div>
+	</div>
+
+	<!-- Recolección de datos -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Paso 1</h3>
+				<fieldset>
+					<legend>
+						Ingrese las funciones <strong>(en formato javascript)</strong>
+					</legend>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="alert alert-dismissible alert-info">
+								<h5>Sistema de Ecuaciones no Lineales</h5>
+							</div>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<form name="initialFun">
+								<div class="form-group">
+							      <strong><label for="initialF1">Función 1</label></strong>
+							      <input type="text" value="function(x,y,z){ return (x*x)-(2*y)+(x*z)+2 }" class="form-control" id="initialF1" placeholder="Ingrese su función 1">
+							    </div>
+								<div class="form-group">
+							      <strong><label for="initialF2">Función 2</label></strong>
+							      <input type="text" value="function(x,y,z){ return (x*y*z)+(2*z)-3 }" class="form-control" id="initialF2" placeholder="Ingrese su función 2">
+							    </div>
+							    <div class="form-group">
+							      <strong><label for="initialF3">Función 3</label></strong>
+							      <input type="text" value="function(x,y,z){ return (y*y)+(z*z)-6 }" class="form-control" id="initialF3" placeholder="Ingrese su función 3">
+							    </div>
+							</form>	
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+
+	<div class="space"></div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h3>Paso 2</h3>
+				<fieldset>
+					<legend>
+						Ingrese las variables iniciales
+					</legend>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="alert alert-dismissible alert-success">
+								<h5>Matriz Xo</h5>
+							</div>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<form name="initialVar">
+								<div class="form-group">
+							      <label for="initialX">Variable X</label>
+							      <input type="number" value="1" class="form-control" id="initialX" placeholder="Valor de X">
+							    </div>
+								<div class="form-group">
+							      <label for="initialY">Variable Y</label>
+							      <input type="number" value="3" class="form-control" id="initialY" placeholder="Valor de Y">
+							    </div>
+							    <div class="form-group">
+							      <label for="initialZ">Variable Z</label>
+							      <input type="number" value="0.5" class="form-control" id="initialZ" placeholder="Valor de Z">
+							    </div>
+							</form>	
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<div class="space"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Paso 3</h3>
+				<fieldset>
+					<legend>
+						Iniciar Operaciones
+					</legend>
+					<div class="row">
+						<div class="col-md-6">
+							<a href="void:;" id="btnCalcular" class="btn btn-dark">
+								Calcular Newton Raphson
+								<span class="glyphicon glyphicon-chevron-right"></span>
+							</a>
+						</div>
+						<div class="col-md-6">
+							<a href="void:;" id="btnCalcularPaso" class="btn btn-primary">
+								Calcular Paso por Paso
+								<span class="glyphicon glyphicon-chevron-right"></span>
+							</a>
+						</div>
+
+						<div class="col-md-12">
+							<div class="form-group">
+								<small id="msg" class="form-text text-danger"></small>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<div class="space"></div>
+	<!-- Paso por Paso -->
+	<div class="container" id="Resultado">
+		<div class="row">
+			<div class="col-md-6">
+				<h3 class="text-primary">Pasos Realizados al Calcular</h3>
+				<div id="tablasDer"></div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/matrix.min.js"></script>
+	<script type="text/javascript" src="./js/metodo.js"></script>
+</body>
+</html>
