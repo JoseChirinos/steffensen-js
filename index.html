@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Newton Raphson</title>
+	<title>Steffensen</title>
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="jumbotron">
-				  <h1 class="display-3">Resolución con Newton Raphson</h1>
+				  <h1 class="display-3">Resolución con Steffensen</h1>
 				  <p>
 				  	Para Resolver por este método por favor ingrese los datos de forma ordenada</p>
 				  <p>
@@ -50,16 +50,12 @@
 							<form name="initialFun">
 								<div class="form-group">
 							      <strong><label for="initialF1">Función 1</label></strong>
-							      <input type="text" value="function(x,y,z){ return (x*x)-(2*y)+(x*z)+2 }" class="form-control" id="initialF1" placeholder="Ingrese su función 1">
+							      <input type="text" value="function(x1,x2){ return (x1*x1)-2*(x1*x2)+x2-8 }" class="form-control" id="initialF1" placeholder="Ingrese su función 1">
 							    </div>
 								<div class="form-group">
 							      <strong><label for="initialF2">Función 2</label></strong>
-							      <input type="text" value="function(x,y,z){ return (x*y*z)+(2*z)-3 }" class="form-control" id="initialF2" placeholder="Ingrese su función 2">
-							    </div>
-							    <div class="form-group">
-							      <strong><label for="initialF3">Función 3</label></strong>
-							      <input type="text" value="function(x,y,z){ return (y*y)+(z*z)-6 }" class="form-control" id="initialF3" placeholder="Ingrese su función 3">
-							    </div>
+							      <input type="text" value="function(x1,x2){ return x1+2*(x2*x2)-10 }" class="form-control" id="initialF2" placeholder="Ingrese su función 2">
+							  </div>
 							</form>	
 						</div>
 					</div>
@@ -89,17 +85,13 @@
 						<div class="col-md-4">
 							<form name="initialVar">
 								<div class="form-group">
-							      <label for="initialX">Variable X</label>
-							      <input type="number" value="1" class="form-control" id="initialX" placeholder="Valor de X">
+							      <label for="initialX1">Variable X1</label>
+							      <input type="number" value="5" class="form-control" id="initialX1" placeholder="Valor de X">
 							    </div>
 								<div class="form-group">
-							      <label for="initialY">Variable Y</label>
-							      <input type="number" value="3" class="form-control" id="initialY" placeholder="Valor de Y">
-							    </div>
-							    <div class="form-group">
-							      <label for="initialZ">Variable Z</label>
-							      <input type="number" value="0.5" class="form-control" id="initialZ" placeholder="Valor de Z">
-							    </div>
+							      <label for="initialX2">Variable X2</label>
+							      <input type="number" value="2" class="form-control" id="initialX2" placeholder="Valor de Y">
+							  </div>
 							</form>	
 						</div>
 					</div>
@@ -119,13 +111,7 @@
 					<div class="row">
 						<div class="col-md-6">
 							<a href="void:;" id="btnCalcular" class="btn btn-dark">
-								Calcular Newton Raphson
-								<span class="glyphicon glyphicon-chevron-right"></span>
-							</a>
-						</div>
-						<div class="col-md-6">
-							<a href="void:;" id="btnCalcularPaso" class="btn btn-primary">
-								Calcular Paso por Paso
+								Calcular Steffensen
 								<span class="glyphicon glyphicon-chevron-right"></span>
 							</a>
 						</div>
